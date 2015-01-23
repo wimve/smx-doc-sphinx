@@ -1,0 +1,20 @@
+{# Extend the theme's layout file to add some custom changes #}
+
+{% extends '!layout.html' %}
+
+
+{# Add css and javascipt files for terminal window class #}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{{ pathto('_static/css/terminal.css', 1) }}" type="text/css" />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ pathto('_static/js/terminal.js', 1) }}"></script>
+
+{% endblock %}
+
+
+{# Override home button to link our custom landing page #}
+
+{% block sidebartitle %}
+    <a href="{{ pathto('index') }}" class="fa fa-home"> {{ project }}</a>
+{% endblock %}
